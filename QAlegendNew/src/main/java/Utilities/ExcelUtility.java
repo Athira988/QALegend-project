@@ -34,9 +34,8 @@ public class ExcelUtility {
 		Cell c=r.getCell(j);
 		int value=(int)c.getNumericCellValue();
 		return String.valueOf(value);
-
-
-
 	}
+	
+	
 
 }

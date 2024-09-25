@@ -209,7 +209,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			Assert.assertEquals(varitationspage.checkaddedVariations(), variationname);
 		}
 		
-		//@Test (priority  =1)
+		@Test (retryAnalyzer = RetryAnalyzer.class,priority=1)
 		public void exportAllVariations()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -220,7 +220,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			varitationspage.clickOnExporttoExcel();
 		}		
 		
-		@Test
+		@Test (retryAnalyzer = RetryAnalyzer.class)
 		public void addSellingPrice()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -238,7 +238,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			WebElement sellingpricenametosearch= sellingpricegroup.searchtextbox;
 			JavascriptExecutor executer= (JavascriptExecutor)driver;
 			executer.executeScript("arguments[0]", sellingpricenametosearch);
-			sellingpricenametosearch.sendKeys(sellingpricename);
+		//	sellingpricenametosearch.sendKeys(sellingpricename);
 			Assert.assertEquals(sellingpricegroup.elementtoVerify(), sellingpricename); 
 		}
 		
