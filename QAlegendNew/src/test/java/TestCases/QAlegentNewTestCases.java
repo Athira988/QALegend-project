@@ -72,7 +72,7 @@ public class QAlegentNewTestCases extends BaseClass {
 		
 	}
 		
-		//@Test
+	//	@Test
 		public void deleteUser() throws IOException
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -103,7 +103,7 @@ public class QAlegentNewTestCases extends BaseClass {
 		userspage.enterTextToSearch("gazal");
 		AssertJUnit.assertEquals(userspage.noMatchingRecordsFound(), "No matching records found");
 }
-		//@Test
+		@Test
 		public void addRole()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -120,7 +120,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			Assert.assertEquals(rolepage.getaddedRole(),rolename);
 		}
 			
-		//@Test
+		@Test
 		public void editRole() {
 			
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -148,7 +148,7 @@ public class QAlegentNewTestCases extends BaseClass {
 		    Assert.assertTrue(rolepage.checkEditedRole()); //assertion failing check witrh sir
 			
 		}
-		//@Test
+		@Test
 		public void deleteRole()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -173,7 +173,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			
 		}
 		
-		//@Test
+	   @Test
 		public void viewCustomers()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -188,7 +188,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			
 		}
 		
-	   // @Test
+	    @Test
 		public void addVariations()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -220,7 +220,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			varitationspage.clickOnExporttoExcel();
 		}		
 		
-		@Test (retryAnalyzer = RetryAnalyzer.class)
+		//@Test (retryAnalyzer = RetryAnalyzer.class)
 		public void addSellingPrice()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
