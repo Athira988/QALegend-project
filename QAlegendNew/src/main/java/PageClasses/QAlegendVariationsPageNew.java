@@ -1,5 +1,6 @@
 package PageClasses;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -76,6 +77,9 @@ public
 	
 	public void enterSearchvalue(String searchtext)
 	{
+		JavascriptExecutor executer= (JavascriptExecutor)driver;
+		executer.executeScript("arguments[0]", searchtextbox);
+		PageUtilities.clickOnElement(searchtextbox);
 		PageUtilities.enterText(searchtextbox, searchtext);
 	}
 	

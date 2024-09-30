@@ -9,8 +9,8 @@
     <classes>
       <class name="TestCases.QAlegentNewTestCases">
         <methods>
-          <include name="addSellingPrice"/>
           <include name="initilization"/>
+          <include name="editRole"/>
         </methods>
       </class> <!-- TestCases.QAlegentNewTestCases -->
     </classes>

@@ -34,6 +34,9 @@ public class QAlegentHomePageNew {
    @FindBy(xpath="//span[text()='Selling Price Group']")
    WebElement sellingpricegroupoption;
    
+   @FindBy(xpath="//span[text()='Brands']")
+   WebElement brandoption;
+   
    public QAlegentHomePageNew(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 
@@ -76,6 +79,11 @@ public class QAlegentHomePageNew {
 	public void clickOnSellingPriceGroup()
 	{
 		PageUtilities.clickOnElement(sellingpricegroupoption);
+	}
+	
+	public void clickOnBrandName()
+	{
+		PageUtilities.clickOnElement(brandoption);
 	}
 	
 }

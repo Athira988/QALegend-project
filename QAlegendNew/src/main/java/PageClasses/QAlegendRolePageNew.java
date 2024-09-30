@@ -1,5 +1,6 @@
 package PageClasses;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -54,6 +55,9 @@ public class QAlegendRolePageNew {
 	@FindBy(xpath="//td[@class='dataTables_empty']")
 	WebElement validationmessagefordelete;
 	
+	//@FindBy(xpath="//a[@class='btn btn-xs btn-primary']")
+	//WebElement editbotton;
+	
 	
 	
 	public QAlegendRolePageNew(WebDriver driver) {
@@ -104,6 +108,8 @@ public class QAlegendRolePageNew {
 	}
 	public void clickOnEditButton()
 	{
+		JavascriptExecutor executer= (JavascriptExecutor)driver;
+		executer.executeScript("arguments[0]", editButton);
 		PageUtilities.clickOnElement(editButton);
 	}
 	

@@ -10,10 +10,18 @@
     <classes>    
       <class name="TestCases.QAlegentNewTestCases">
       <methods>
-      <include name="addSellingPrice"> </include>
+     <!--  <include name="deleteUser"> </include>
+       <include name="addRole"> </include>
+        <include name="editRole"> </include>
+         <include name="deleteRole"> </include>
+          <include name="viewCustomers"> </include>
+           <include name="addVariations"> </include>
+           <include name="exportAllVariations"> </include> --> 
+           <include name="addVariations"></include>      
       
       </methods>
       </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+

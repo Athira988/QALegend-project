@@ -1,5 +1,6 @@
 package PageClasses;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,8 +23,7 @@ public class QAlegendSellingPriceGroupPageNew {
 	@FindBy(xpath="//button[text()='Save']")
 	WebElement saveButton;
 	
-	@FindBy(xpath="//input[@class='form-control input-sm']")
-	public  
+	@FindBy(xpath="//input[@class='form-control input-sm']")	 
 	WebElement searchtextbox;
 	
 	@FindBy(xpath="//td[@class='sorting_1']")
@@ -56,6 +56,8 @@ public class QAlegendSellingPriceGroupPageNew {
 	}
 	public void enterSearchText(String searchtext)
 	{
+		JavascriptExecutor executer= (JavascriptExecutor)driver;
+		executer.executeScript("arguments[0]", searchtextbox);
 		PageUtilities.enterText(searchtextbox, searchtext);	
 	}
 	
