@@ -56,7 +56,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Sept 30, 2024 09:37:46 pm</span>
+                    <span class="badge badge-primary">Oct 1, 2024 01:27:08 am</span>
                 </a>
             </li>
         </ul>
@@ -131,19 +131,19 @@
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">editRole</p>
-							<p class="duration text-sm">0h 0m 40s+483ms</p>
-							<span class="datetime">21:38:10 pm</span>
+							<p class="name">editBrands</p>
+							<p class="duration text-sm">0h 0m 23s+587ms</p>
+							<span class="datetime">01:27:23 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-fail">editRole</h5>
-									<span class='badge badge-success'>09.30.2024 21:38:10</span>
-									<span class='badge badge-danger'>09.30.2024 21:38:51</span>
-									<span class='badge badge-default'>0h 0m 40s+483ms</span>
+									<h5 class="test-status text-fail">editBrands</h5>
+									<span class='badge badge-success'>10.01.2024 01:27:23</span>
+									<span class='badge badge-danger'>10.01.2024 01:27:47</span>
+									<span class='badge badge-default'>0h 0m 23s+587ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -160,17 +160,17 @@
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-times text-fail"></i></td>
-				<td>9:38:51 pm</td>
+				<td>1:27:46 am</td>
 				<td>
-						<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='icheckbox_square-blue checked'])[1]"}
+						<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[text()='No matching records found']"}
   (Session info: chrome=129.0.6668.70)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.23.0', revision: '4df0a231af'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7d789775c228f4247ce8c472d46f8632, findElement {using=xpath, value=(//div[@class='icheckbox_square-blue checked'])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63373}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63373/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7d789775c228f4247ce8c472d46f8632
+Command: [a2f38c910e011e72992e69606268ac39, findElement {using=xpath, value=//td[text()='No matching records found']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54326}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54326/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a2f38c910e011e72992e69606268ac39
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -187,10 +187,10 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.isSelected(Unknown Source)
-	at Utilities.PageUtilities.isElementSelected(PageUtilities.java:90)
-	at PageClasses.QAlegendRolePageNew.checkEditedRole(QAlegendRolePageNew.java:134)
-	at TestCases.QAlegentNewTestCases.editRole(QAlegentNewTestCases.java:140)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.getText(Unknown Source)
+	at Utilities.PageUtilities.getElementText(PageUtilities.java:23)
+	at PageClasses.QAlegentBrandsPageNew.validationMessageVerificationOnDelete(QAlegentBrandsPageNew.java:111)
+	at TestCases.QAlegentNewTestCases.editBrands(QAlegentNewTestCases.java:270)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -222,7 +222,7 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-times text-fail"></i></td>
-				<td>9:38:51 pm</td>
+				<td>1:27:47 am</td>
 				<td>
 						Test failed
 				</td>
@@ -232,7 +232,7 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 </div>
 <div class="detail-foot">
 	<ul class="attachments">
-			<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\Lenovo\git\QALegend-project\QAlegendNew\test-output\editRole.png' src='C:\Users\Lenovo\git\QALegend-project\QAlegendNew\test-output\editRole.png'>
+			<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\Lenovo\git\QALegend-project\QAlegendNew\test-output\editBrands.png' src='C:\Users\Lenovo\git\QALegend-project\QAlegendNew\test-output\editBrands.png'>
 	</ul>
 </div>
 					</div>
@@ -300,9 +300,9 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 											<i class="fa fa-times text-white"></i>
 										</div>
 									</td>
-									<td>21:38:10 pm</td>
+									<td>01:27:23 am</td>
 									<td class='linked' test-id='1'>
-										editRole
+										editBrands
 									</td>
 								</tr>
 							</tbody>
@@ -399,7 +399,7 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Sept 30, 2024 09:37:46 pm</h4>
+							<h4 class="font-weight-light mt-4">Oct 1, 2024 01:27:08 am</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -415,7 +415,7 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 1m 4s+816ms</h4>
+							<h4 class="font-weight-light mt-4">0h 0m 38s+487ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -510,7 +510,7 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 </script>
 <script>
 	var timeline = {
-	        "editRole":40.483
+	        "editBrands":23.587
 	};
 </script>
                 </div>

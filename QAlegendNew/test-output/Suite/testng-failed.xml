@@ -10,7 +10,7 @@
       <class name="TestCases.QAlegentNewTestCases">
         <methods>
           <include name="initilization"/>
-          <include name="editRole"/>
+          <include name="editBrands"/>
         </methods>
       </class> <!-- TestCases.QAlegentNewTestCases -->
     </classes>

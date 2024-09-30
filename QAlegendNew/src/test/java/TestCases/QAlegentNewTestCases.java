@@ -32,11 +32,13 @@ import PageClasses.QAlegendLoginPageNew;
 import PageClasses.QAlegendRolePageNew;
 import PageClasses.QAlegendSellingPriceGroupPageNew;
 import PageClasses.QAlegendVariationsPageNew;
+import PageClasses.QAlegentBrandsPageNew;
 import PageClasses.QAlegentCustomersPageNew;
 import PageClasses.QAlegentHomePageNew;
 
 import PageClasses.QAlegentUsersPageNew;
 import Utilities.ExcelUtility;
+
 
 public class QAlegentNewTestCases extends BaseClass {
 	WebDriver driver;
@@ -47,8 +49,10 @@ public class QAlegentNewTestCases extends BaseClass {
 	QAlegentCustomersPageNew cutomerpage;
 	QAlegendVariationsPageNew varitationspage;
 	QAlegendSellingPriceGroupPageNew sellingpricegroup;
+	QAlegentBrandsPageNew brandpage;
 	Properties props;
 	FileReader reader;
+	
     
 
 	
@@ -69,6 +73,8 @@ public class QAlegentNewTestCases extends BaseClass {
 		cutomerpage=new QAlegentCustomersPageNew(driver);
 		varitationspage=new QAlegendVariationsPageNew(driver);
 		sellingpricegroup=new QAlegendSellingPriceGroupPageNew(driver);
+		brandpage=new QAlegentBrandsPageNew(driver);
+		
 		
 	}
 		
@@ -137,7 +143,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			rolepage.clickOnroleEditCheckBox();
 			rolepage.clickOnUpdateButton();
 			rolepage.enterroleTextToSearch(rolnumtoedit);			 
-		    //Assert.assertTrue(rolepage.checkEditedRole()); //assertion failing check witrh sir
+		    Assert.assertTrue(rolepage.checkEditedRole()); 
 			
 		}
 		 @Test
@@ -165,7 +171,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			
 		}
 		
-	   // @Test
+	    @Test
 		public void viewCustomers()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -201,18 +207,8 @@ public class QAlegentNewTestCases extends BaseClass {
 			Assert.assertEquals(varitationspage.checkaddedVariations(), variationname);
 		}
 		
-	 //   @Test (retryAnalyzer = RetryAnalyzer.class,priority=1)
-		public void exportAllVariations()
-		{
-			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
-			homepage.clickOnEndTourButton();
-			homepage.clickOnProductsAction();
-			varitationspage.clickOnVariationsOption();
-			varitationspage.clickActionButton();
-			varitationspage.clickOnExporttoExcel();
-		}		
-		
-	 @Test //(retryAnalyzer = RetryAnalyzer.class)
+	  
+	 @Test 
 		public void addSellingPrice()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -230,5 +226,48 @@ public class QAlegentNewTestCases extends BaseClass {
 			sellingpricegroup.enterSearchText(sellingpricename);
 			Assert.assertEquals(sellingpricegroup.elementtoVerify(), sellingpricename); 
 		}
-		
+	 
+	 @Test
+	 public void addBrands() throws Exception
+	 {
+		 loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
+			homepage.clickOnEndTourButton();
+			homepage.clickOnProductsAction();
+			homepage.clickOnBrandName();
+			brandpage.clickOnAddButton();
+			Random rand= new Random();
+			int randomnumber= rand.nextInt(10000);
+			String addnametextbox=props.getProperty("addnametextbox")+randomnumber;
+			String adddescriptiontextbox=props.getProperty("adddescriptiontextbox")+randomnumber;
+			brandpage.enterNameTextBox(addnametextbox);
+			brandpage.enterDescriptionTextBox(adddescriptiontextbox);
+			brandpage.clickOnSaveButton();
+			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.visibilityOf(brandpage.searchtextbox));
+			brandpage.enterTextToSearch(adddescriptiontextbox);	
+			Assert.assertEquals(brandpage.brandToBeVerified(), addnametextbox); 
+			 }
+	 @Test
+	 public void editBrands() throws Exception
+	 {
+		 loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
+			homepage.clickOnEndTourButton();
+			homepage.clickOnProductsAction();
+			homepage.clickOnBrandName();
+			brandpage.clickOnAddButton();
+			Random rand= new Random();
+			int randomnumber= rand.nextInt(10000);
+			String addnametodelete=props.getProperty("addnametodelete")+randomnumber;
+			String adddescriptiontodelete=props.getProperty("adddescriptiontodelete")+randomnumber;
+			brandpage.enterNameTextBox(addnametodelete);
+			brandpage.enterDescriptionTextBox(adddescriptiontodelete);
+			brandpage.clickOnSaveButton();
+			//WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+			//wait.until(ExpectedConditions.visibilityOf(brandpage.searchtextbox));
+			Thread.sleep(10000);
+			brandpage.enterTextToSearch(adddescriptiontodelete);	
+			brandpage.clickOnDeleteButton();
+			Assert.assertEquals(brandpage.validationMessageVerificationOnDelete(), "No matching records found");
+			
+	 }
 }

@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-30T21:37:47 IST" name="Suite" finished-at="2024-09-30T21:38:51 IST" duration-ms="63863">
+  <suite started-at="2024-10-01T01:27:09 IST" name="Suite" finished-at="2024-10-01T01:27:47 IST" duration-ms="37518">
     <groups>
     </groups>
-    <test started-at="2024-09-30T21:37:47 IST" name="Test" finished-at="2024-09-30T21:38:51 IST" duration-ms="63863">
+    <test started-at="2024-10-01T01:27:09 IST" name="Test" finished-at="2024-10-01T01:27:47 IST" duration-ms="37518">
       <class name="TestCases.QAlegentNewTestCases">
-        <test-method is-config="true" signature="initilization(java.lang.String)[pri:0, instance:TestCases.QAlegentNewTestCases@18e36d14]" started-at="2024-09-30T21:37:47 IST" name="initilization" finished-at="2024-09-30T21:38:10 IST" duration-ms="23251" status="PASS">
+        <test-method is-config="true" signature="initilization(java.lang.String)[pri:0, instance:TestCases.QAlegentNewTestCases@5082d622]" started-at="2024-10-01T01:27:09 IST" name="initilization" finished-at="2024-10-01T01:27:23 IST" duration-ms="13804" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,29 +18,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilization -->
-        <test-method signature="editRole()[pri:0, instance:TestCases.QAlegentNewTestCases@18e36d14]" started-at="2024-09-30T21:38:10 IST" name="editRole" finished-at="2024-09-30T21:38:51 IST" duration-ms="40182" status="FAIL">
+        <test-method signature="editBrands()[pri:0, instance:TestCases.QAlegentNewTestCases@5082d622]" started-at="2024-10-01T01:27:23 IST" name="editBrands" finished-at="2024-10-01T01:27:46 IST" duration-ms="22668" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='icheckbox_square-blue checked'])[1]"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//td[text()='No matching records found']"}
   (Session info: chrome=129.0.6668.70)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.23.0', revision: '4df0a231af'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7d789775c228f4247ce8c472d46f8632, findElement {using=xpath, value=(//div[@class='icheckbox_square-blue checked'])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63373}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63373/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7d789775c228f4247ce8c472d46f8632]]>
+Command: [a2f38c910e011e72992e69606268ac39, findElement {using=xpath, value=//td[text()='No matching records found']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54326}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54326/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a2f38c910e011e72992e69606268ac39]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='icheckbox_square-blue checked'])[1]"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[text()='No matching records found']"}
   (Session info: chrome=129.0.6668.70)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.23.0', revision: '4df0a231af'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7d789775c228f4247ce8c472d46f8632, findElement {using=xpath, value=(//div[@class='icheckbox_square-blue checked'])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63373}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63373/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7d789775c228f4247ce8c472d46f8632
+Command: [a2f38c910e011e72992e69606268ac39, findElement {using=xpath, value=//td[text()='No matching records found']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54326}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54326/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a2f38c910e011e72992e69606268ac39
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -57,10 +57,10 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy12.isSelected(Unknown Source)
-at Utilities.PageUtilities.isElementSelected(PageUtilities.java:90)
-at PageClasses.QAlegendRolePageNew.checkEditedRole(QAlegendRolePageNew.java:134)
-at TestCases.QAlegentNewTestCases.editRole(QAlegentNewTestCases.java:140)
+at jdk.proxy2/jdk.proxy2.$Proxy12.getText(Unknown Source)
+at Utilities.PageUtilities.getElementText(PageUtilities.java:23)
+at PageClasses.QAlegentBrandsPageNew.validationMessageVerificationOnDelete(QAlegentBrandsPageNew.java:111)
+at TestCases.QAlegentNewTestCases.editBrands(QAlegentNewTestCases.java:270)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -92,7 +92,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editRole -->
+        </test-method> <!-- editBrands -->
       </class> <!-- TestCases.QAlegentNewTestCases -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

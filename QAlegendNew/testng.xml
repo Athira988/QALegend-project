@@ -16,8 +16,8 @@
          <include name="deleteRole"> </include>
           <include name="viewCustomers"> </include>
            <include name="addVariations"> </include>
-           <include name="exportAllVariations"> </include> --> 
-           <include name="addVariations"></include>      
+           <include name="addBrands"> </include> --> 
+           <include name="editBrands"></include>      
       
       </methods>
       </class>

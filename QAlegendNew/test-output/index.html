@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.QAlegentNewTestCases" class="method navigator-link" hash-for-method="editRole">editRole</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestCases.QAlegentNewTestCases" class="method navigator-link" hash-for-method="editBrands">editBrands</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -126,18 +126,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="editRole">
-                  </a> <!-- editRole -->
-                  <span class="method-name">editRole</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[@class=&apos;icheckbox_square-blue checked&apos;])[1]&quot;}
+                  <a name="editBrands">
+                  </a> <!-- editBrands -->
+                  <span class="method-name">editBrands</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//td[text()=&apos;No matching records found&apos;]&quot;}
   (Session info: chrome=129.0.6668.70)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7d789775c228f4247ce8c472d46f8632, findElement {using=xpath, value=(//div[@class=&apos;icheckbox_square-blue checked&apos;])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63373}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63373/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7d789775c228f4247ce8c472d46f8632
+Command: [a2f38c910e011e72992e69606268ac39, findElement {using=xpath, value=//td[text()=&apos;No matching records found&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54326}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54326/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a2f38c910e011e72992e69606268ac39
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -151,10 +151,10 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.isSelected(Unknown Source)
-	at Utilities.PageUtilities.isElementSelected(PageUtilities.java:90)
-	at PageClasses.QAlegendRolePageNew.checkEditedRole(QAlegendRolePageNew.java:134)
-	at TestCases.QAlegentNewTestCases.editRole(QAlegentNewTestCases.java:140)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.getText(Unknown Source)
+	at Utilities.PageUtilities.getElementText(PageUtilities.java:23)
+	at PageClasses.QAlegentBrandsPageNew.validationMessageVerificationOnDelete(QAlegentBrandsPageNew.java:111)
+	at TestCases.QAlegentNewTestCases.editBrands(QAlegentNewTestCases.java:270)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 ... Removed 28 stack frames
 </div> <!-- stack-trace -->
@@ -180,7 +180,7 @@ Session ID: 7d789775c228f4247ce8c472d46f8632
     &lt;classes&gt;
       &lt;class name=&quot;TestCases.QAlegentNewTestCases&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;editRole&quot;/&gt;
+          &lt;include name=&quot;editBrands&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- TestCases.QAlegentNewTestCases --&gt;
     &lt;/classes&gt;
@@ -224,14 +224,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'editRole')
+data.setCell(0, 1, 'editBrands')
 data.setCell(0, 2, 'TestCases.QAlegentNewTestCases')
-data.setCell(0, 3, 40182);
+data.setCell(0, 3, 22668);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 40 seconds</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -246,7 +246,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">5 ignored methods</span>
+            <span class="header-content">8 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -254,13 +254,19 @@ return data;
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">addVariations</span>
                 <br/>
-                <span class="ignored-method-name">deleteRole</span>
+                <span class="ignored-method-name">viewCustomers</span>
+                <br/>
+                <span class="ignored-method-name">addRole</span>
                 <br/>
                 <span class="ignored-method-name">addSellingPrice</span>
                 <br/>
                 <span class="ignored-method-name">deleteUser</span>
                 <br/>
-                <span class="ignored-method-name">addRole</span>
+                <span class="ignored-method-name">deleteRole</span>
+                <br/>
+                <span class="ignored-method-name">addBrands</span>
+                <br/>
+                <span class="ignored-method-name">editRole</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -280,8 +286,8 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">editRole</span>
-                <span class="method-start">23255 ms</span>
+                <span class="method-name">editBrands</span>
+                <span class="method-start">13806 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
