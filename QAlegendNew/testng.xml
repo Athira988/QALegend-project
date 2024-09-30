@@ -12,11 +12,11 @@
       <methods>
      <include name="deleteUser"> </include>
        <include name="addRole"> </include>
-        <include name="editRole"> </include>
+    <!--     <include name="editRole"> </include>
          <include name="deleteRole"> </include>
           <include name="viewCustomers"> </include>
            <include name="addVariations"> </include>
-       <!--      <include name="addBrands"> </include> 
+            <include name="addBrands"> </include> 
            <include name="addBrands"></include>      
            <include name="editBrands"></include>  -->
       
