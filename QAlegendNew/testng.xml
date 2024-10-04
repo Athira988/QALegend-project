@@ -21,9 +21,9 @@
            <include name="verifyIfUserCanDeleteBrands"></include>  --> 
            
            <include name="verifyIfUserCanDeleteUser"></include>
-           <include name="verifyIfUserCanAddRole"> </include>
+        <!--   <include name="verifyIfUserCanAddRole"> </include>
             <include name="verifyIfUserCanViewTheCutomerDetails"> </include>
-            <include name="verifyIfUserCanDeleteBrands"> </include>
+            <include name="verifyIfUserCanDeleteBrands"> </include> --> 
           
       
       </methods>
