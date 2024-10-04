@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QAlegentBrandsPageNew {
 	
@@ -31,19 +32,21 @@ public class QAlegentBrandsPageNew {
 	@FindBy(xpath="(//tr[@class='odd']//child::td)[2]")
 	WebElement addedbrandname;
 	
-	@FindBy(xpath="//td[@class='sorting_1']")
+	@FindBy(xpath="(//td[@class='sorting_1']")
 	WebElement brandtobeverfied;
 	
 	@FindBy(xpath="//div[@id='brands_table_info']")
 	WebElement valdatationmessage;
 	
-	@FindBy(xpath="//button[text()=' Delete']")
+	@FindBy(xpath="//button[@class='btn btn-xs btn-danger delete_brand_button']")
+	public
 	WebElement deletbutton;
 	
 	@FindBy(xpath="//button[text()='OK']")
+	public
 	WebElement okButton;
 	
-	@FindBy(xpath="//td[text()='No matching records found']")
+	@FindBy(xpath="//tr[@class='odd']//child::td")
 	WebElement validationmessageonDelete;
 	
 	public QAlegentBrandsPageNew(WebDriver driver) {
@@ -79,6 +82,7 @@ public class QAlegentBrandsPageNew {
 	 {
 		 JavascriptExecutor executer= (JavascriptExecutor)driver;
 			executer.executeScript("arguments[0]", searchtextbox);
+			WaitUtility.waitforElementToBeVisible(searchtextbox, 15);
 			PageUtilities.enterText(searchtextbox, text);
 	 }
 	 
@@ -89,6 +93,7 @@ public class QAlegentBrandsPageNew {
 	 
 	 public String brandToBeVerified()
 	 {
+		 WaitUtility.waitforElementToBeVisible(brandtobeverfied, 10);
 		 return(PageUtilities.getElementText(brandtobeverfied));
 	 }
 	 
@@ -99,15 +104,21 @@ public class QAlegentBrandsPageNew {
 	 
 	 public void clickOnDeleteButton()
 	 {
-		 PageUtilities.clickOnElement(deletbutton);
+		 //JavascriptExecutor executer= (JavascriptExecutor)driver;
+		//	executer.executeScript("arguments[0]", deletbutton);
+		 WaitUtility.waitforElementToBeVisible(deletbutton, 10);
+			PageUtilities.clickOnElement(deletbutton);
+		 
 	 }
 	 
 	 public void clickOnOkButton()
 	 {
+		 WaitUtility.waitforElementToBeVisible(okButton, 10);
 		 PageUtilities.clickOnElement(okButton);
 	 }
 	 public String validationMessageVerificationOnDelete()
 	 {
+		 WaitUtility.waitforElementToBeVisible(validationmessageonDelete, 15);
 		 return(PageUtilities.getElementText(validationmessageonDelete));
 	 }
 }

@@ -38,6 +38,8 @@ import PageClasses.QAlegentHomePageNew;
 
 import PageClasses.QAlegentUsersPageNew;
 import Utilities.ExcelUtility;
+import Utilities.WaitUtility;
+import Utilities.fakerUtility;
 
 
 public class QAlegentNewTestCases extends BaseClass {
@@ -51,10 +53,7 @@ public class QAlegentNewTestCases extends BaseClass {
 	QAlegendSellingPriceGroupPageNew sellingpricegroup;
 	QAlegentBrandsPageNew brandpage;
 	Properties props;
-	FileReader reader;
-	
-    
-
+	FileReader reader;	 
 	
 	@BeforeMethod (groups= {"smoketest","regression"})
 	@Parameters({"Browser"})
@@ -73,29 +72,24 @@ public class QAlegentNewTestCases extends BaseClass {
 		cutomerpage=new QAlegentCustomersPageNew(driver);
 		varitationspage=new QAlegendVariationsPageNew(driver);
 		sellingpricegroup=new QAlegendSellingPriceGroupPageNew(driver);
-		brandpage=new QAlegentBrandsPageNew(driver);
-		
-		
+		brandpage=new QAlegentBrandsPageNew(driver);			
 	}
 		
 	    @Test
-		public void deleteUser() throws IOException
+		public void verifyIfUserCanDeleteUser() throws IOException
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnUserMangementOption();
 			homepage.clickOnUserAction();
 			userspage.clickOnUsersButton();
-			
-			
-		Random rand= new Random();
-		int randomnumber= rand.nextInt(10000);
-
-		String prefix=ExcelUtility.getString(1, 0, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1")+randomnumber;
+					
+		
+		String prefix=ExcelUtility.getString(1, 0, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1")+fakerUtility.randomNumberGenerator();
 		String firstname=ExcelUtility.getString(1, 1, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");
 		String lastname=ExcelUtility.getString(1, 2, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");
-		String mail=randomnumber+ExcelUtility.getString(1, 3, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");	
-		String Username=randomnumber+ExcelUtility.getString(1, 4, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");
+		String mail=fakerUtility.randomNumberGenerator()+ExcelUtility.getString(1, 3, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");	
+		String Username=fakerUtility.randomNumberGenerator()+ExcelUtility.getString(1, 4, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");
 		String Password=ExcelUtility.getString(1, 5, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");
 		String ConfirmPassword=ExcelUtility.getString(1, 6, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");
 		String SalesCommissionPercentage=ExcelUtility.getString(1, 7, "//src//main//java//Resources//UserDetails.xlsx", "Sheet1");
@@ -105,19 +99,17 @@ public class QAlegentNewTestCases extends BaseClass {
 		userspage.enterTextToSearch(role);
 		userspage.deleteButton();
 		userspage.okButton();		
-		AssertJUnit.assertEquals(userspage.noMatchingRecordsFound(), "No matching records found");
+		Assert.assertEquals(userspage.noMatchingRecordsFound(), "No matching records found");
 }
 	    @Test
-		public void addRole()
+		public void verifyIfUserCanAddRole()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnUserMangementOption();
 			homepage.clickOnRoleAction();
-			rolepage.clickOnAddButton();
-			Random rand= new Random();
-			int randomnumber= rand.nextInt(10000);
-			String rolename=props.getProperty("addrole")+randomnumber;
+			rolepage.clickOnAddButton();			
+			String rolename=props.getProperty("addrole")+fakerUtility.randomNumberGenerator();
 			rolepage.enterTextToadd(rolename);
 			rolepage.clickOnSaveButton();			
 			rolepage.enterroleTextToSearch(rolename);
@@ -125,45 +117,38 @@ public class QAlegentNewTestCases extends BaseClass {
 		}
 			
 	    @Test
-		public void editRole() throws Exception {
+		public void verifyIfUserCanEditRole() throws Exception {
 			
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnUserMangementOption();
 			homepage.clickOnRoleAction();
-			rolepage.clickOnAddButton();
-			Random rand= new Random();
-			int randomnumber= rand.nextInt(10000);
-			String rolnumtoedit=props.getProperty("editRole")+randomnumber;
+			rolepage.clickOnAddButton();			
+			String rolnumtoedit=props.getProperty("editRole")+fakerUtility.randomNumberGenerator();
 			rolepage.enterTextToadd(rolnumtoedit);
 			rolepage.clickOnSaveButton();
-			rolepage.enterroleTextToSearch(rolnumtoedit);	
-			Thread.sleep(20000);
+			rolepage.enterroleTextToSearch(rolnumtoedit);				
 			rolepage.clickOnEditButton();
 			rolepage.clickOnroleEditCheckBox();
 			rolepage.clickOnUpdateButton();
-			rolepage.enterroleTextToSearch(rolnumtoedit);			 
+			rolepage.enterroleTextToSearch(rolnumtoedit);				
+			rolepage.clickOnEditButton();
 		    Assert.assertTrue(rolepage.checkEditedRole()); 
 			
 		}
 		 @Test
-		public void deleteRole()
+		public void verifyIfUserCanDeleteRole() throws InterruptedException
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnUserMangementOption();
 			homepage.clickOnRoleAction();
-			rolepage.clickOnAddButton();
-			Random rand= new Random();
-			int randomnumber= rand.nextInt(10000);
-			String rolnumtodelete=props.getProperty("addroletodelete")+randomnumber;
+			rolepage.clickOnAddButton();			
+			String rolnumtodelete=props.getProperty("addroletodelete")+fakerUtility.randomNumberGenerator();
 			rolepage.enterTextToadd(rolnumtodelete);
 			rolepage.clickOnSaveButton();
-			rolepage.enterroleTextToSearch(rolnumtodelete);
-			WebElement deletebutton= driver.findElement(By.xpath ("(//tr[@class='odd']//child::button)[1]")); 
-			JavascriptExecutor executer= (JavascriptExecutor)driver;
-			executer.executeScript("arguments[0]", deletebutton);
-			deletebutton.click();
+			rolepage.enterroleTextToSearch(rolnumtodelete);			
+			rolepage.clickOnDeleteButton();
 			rolepage.clickOnOkButton();
 			rolepage.enterroleTextToSearch(rolnumtodelete);
 			Assert.assertEquals(rolepage.checktheValidationDelete(), "No matching records found");
@@ -172,14 +157,12 @@ public class QAlegentNewTestCases extends BaseClass {
 		}
 		
 	    @Test
-		public void viewCustomers()
+		public void verifyIfUserCanViewTheCutomerDetails()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnContactsAction();
-			homepage.clickOnCustomersAction();			
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-			wait.until(ExpectedConditions.visibilityOf(cutomerpage.actiondropdown));
+			homepage.clickOnCustomersAction();	
 			cutomerpage.clickOnActions();
 			cutomerpage.clickOnViewOption();
 			Assert.assertEquals(cutomerpage.checkCustomerinfo(), "Customer info");
@@ -187,39 +170,33 @@ public class QAlegentNewTestCases extends BaseClass {
 		}
 		
 	    @Test
-		public void addVariations()
+		public void verifyIfUserCanAddTheVariations() throws InterruptedException
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnProductsAction();
 			varitationspage.clickOnVariationsOption();
-			varitationspage.clickOnAddVariationButton();
-			Random rand= new Random();
-			int randomnumber= rand.nextInt(10000);
-			String variationname=props.getProperty("variationname")+randomnumber;
+			varitationspage.clickOnAddVariationButton();			
+			String variationname=props.getProperty("variationname")+fakerUtility.randomNumberGenerator();
 			varitationspage.enterVariationName(variationname);
-			String variationvalue=props.getProperty("addvariationvalues")+randomnumber;
+			String variationvalue=props.getProperty("addvariationvalues")+fakerUtility.randomNumberGenerator();
 			varitationspage.enterVariationvalue(variationvalue);
-			varitationspage.enterSaveButton();
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(15));		
-			wait.until(ExpectedConditions.visibilityOf(varitationspage.searchtextbox));
-		    varitationspage.enterSearchvalue(variationname);			
+			varitationspage.enterSaveButton();			
+		    varitationspage.enterSearchvalue(variationname);
 			Assert.assertEquals(varitationspage.checkaddedVariations(), variationname);
 		}
 		
 	  
 	 @Test 
-		public void addSellingPrice()
+		public void verifyIfUserCanAddSellingPrice()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnProductsAction();
 			homepage.clickOnSellingPriceGroup();
-			sellingpricegroup.clickOnAddButton();
-			Random rand= new Random();
-			int randomnumber= rand.nextInt(10000);
-			String sellingpricename=props.getProperty("sellingpricename")+randomnumber;
-			String sellingpricedesc=props.getProperty("sellingpricedesc")+randomnumber;
+			sellingpricegroup.clickOnAddButton();			
+			String sellingpricename=props.getProperty("sellingpricename")+fakerUtility.randomNumberGenerator();
+			String sellingpricedesc=props.getProperty("sellingpricedesc")+fakerUtility.randomNumberGenerator();
 			sellingpricegroup.enterOnSellingPriceName(sellingpricename);
 			sellingpricegroup.enterOnSellingPriceDesc(sellingpricedesc);
 			sellingpricegroup.clickOnSaveButton();
@@ -228,45 +205,37 @@ public class QAlegentNewTestCases extends BaseClass {
 		}
 	 
 	 @Test
-	 public void addBrands() throws Exception
+	 public void verifyIfUserCanaddBrands() throws Exception
 	 {
 		 loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnProductsAction();
 			homepage.clickOnBrandName();
-			brandpage.clickOnAddButton();
-			Random rand= new Random();
-			int randomnumber= rand.nextInt(10000);
-			String addnametextbox=props.getProperty("addnametextbox")+randomnumber;
-			String adddescriptiontextbox=props.getProperty("adddescriptiontextbox")+randomnumber;
+			brandpage.clickOnAddButton();			
+			String addnametextbox=props.getProperty("addnametextbox")+fakerUtility.randomNumberGenerator();
+			String adddescriptiontextbox=props.getProperty("adddescriptiontextbox")+fakerUtility.randomNumberGenerator();
 			brandpage.enterNameTextBox(addnametextbox);
 			brandpage.enterDescriptionTextBox(adddescriptiontextbox);
-			brandpage.clickOnSaveButton();
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-			wait.until(ExpectedConditions.visibilityOf(brandpage.searchtextbox));
-			brandpage.enterTextToSearch(adddescriptiontextbox);	
+			brandpage.clickOnSaveButton();			
+			brandpage.enterTextToSearch(adddescriptiontextbox);		
 			Assert.assertEquals(brandpage.brandToBeVerified(), addnametextbox); 
 			 }
 	 @Test
-	 public void editBrands() throws Exception
+	 public void verifyIfUserCanDeleteBrands() throws Exception
 	 {
 		 loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
 			homepage.clickOnEndTourButton();
 			homepage.clickOnProductsAction();
 			homepage.clickOnBrandName();
-			brandpage.clickOnAddButton();
-			Random rand= new Random();
-			int randomnumber= rand.nextInt(10000);
-			String addnametodelete=props.getProperty("addnametodelete")+randomnumber;
-			String adddescriptiontodelete=props.getProperty("adddescriptiontodelete")+randomnumber;
+			brandpage.clickOnAddButton();			
+			String addnametodelete=props.getProperty("addnametodelete")+fakerUtility.randomNumberGenerator();
+			String adddescriptiontodelete=props.getProperty("adddescriptiontodelete")+fakerUtility.randomNumberGenerator();
 			brandpage.enterNameTextBox(addnametodelete);
 			brandpage.enterDescriptionTextBox(adddescriptiontodelete);
 			brandpage.clickOnSaveButton();
-			//WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-			//wait.until(ExpectedConditions.visibilityOf(brandpage.searchtextbox));
-			Thread.sleep(10000);
-			brandpage.enterTextToSearch(adddescriptiontodelete);	
-			brandpage.clickOnDeleteButton();
+			brandpage.enterTextToSearch(adddescriptiontodelete);			
+			brandpage.clickOnDeleteButton();  
+			brandpage.clickOnOkButton();			
 			Assert.assertEquals(brandpage.validationMessageVerificationOnDelete(), "No matching records found");
 			
 	 }

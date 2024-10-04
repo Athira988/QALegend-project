@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QAlegendSellingPriceGroupPageNew {
 	WebDriver driver;
@@ -58,12 +59,14 @@ public class QAlegendSellingPriceGroupPageNew {
 	{
 		JavascriptExecutor executer= (JavascriptExecutor)driver;
 		executer.executeScript("arguments[0]", searchtextbox);
+		WaitUtility.waitforElementToBeVisible(searchtextbox, 20);
 		PageUtilities.enterText(searchtextbox, searchtext);	
 	}
 	
 	
 	public String elementtoVerify()
 	{
+		WaitUtility.waitforElementToBeVisible(elementtoverify, 10);
 		return(PageUtilities.getElementText(elementtoverify));
 	}
 }

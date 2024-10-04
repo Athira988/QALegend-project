@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QAlegendVariationsPageNew {
 
@@ -77,9 +78,9 @@ public
 	
 	public void enterSearchvalue(String searchtext)
 	{
-		JavascriptExecutor executer= (JavascriptExecutor)driver;
-		executer.executeScript("arguments[0]", searchtextbox);
-		PageUtilities.clickOnElement(searchtextbox);
+		//JavascriptExecutor executer= (JavascriptExecutor)driver;
+		//executer.executeScript("arguments[0]", searchtextbox);
+		WaitUtility.waitforElementToBeVisible(searchtextbox, 15);
 		PageUtilities.enterText(searchtextbox, searchtext);
 	}
 	
@@ -93,6 +94,7 @@ public
 	}
 	public String checkaddedVariations()
 	{
+		WaitUtility.waitforElementToBeVisible(addedvariationname, 10);
 		return(PageUtilities.getElementText(addedvariationname));
 	}
 }

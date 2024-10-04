@@ -1,5 +1,6 @@
 package PageClasses;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QAlegendRolePageNew {
 	
@@ -99,6 +101,10 @@ public class QAlegendRolePageNew {
 	
 	public void clickOnDeleteButton()
 	{
+		
+		JavascriptExecutor executer= (JavascriptExecutor)driver;
+		executer.executeScript("arguments[0]", deleteButton);
+		WaitUtility.waitforElementToBeVisible(deleteButton, 10);
 		PageUtilities.clickOnElement(deleteButton);
 	}
 	
@@ -110,6 +116,7 @@ public class QAlegendRolePageNew {
 	{
 		JavascriptExecutor executer= (JavascriptExecutor)driver;
 		executer.executeScript("arguments[0]", editButton);
+		
 		PageUtilities.clickOnElement(editButton);
 	}
 	

@@ -69,50 +69,6 @@ public class QAlegentUsersPageNew {
 		PageUtilities.clickOnElement(addButton);
 	}
 
-	/* public  void enterPrefix(String prefix)
-	{
-		PageUtilities.enterText(prefixsurnametextbox, prefix);
-	}
-
-	public void enterFirstName(String firstname)
-	{
-		PageUtilities.enterText(firstnametextbox, firstname);
-	}
-
-	public void enterLastname(String lastname)
-	{
-		PageUtilities.enterText(lastnametextbox, lastname);
-	}
-
-	public void enteremail(String email)
-	{
-		PageUtilities.enterText(emailtextbox, email);
-	}
-
-	public void selectRole(String role)
-	{
-		PageUtilities.dropdownSelectByVisibleText(roledropdownlist, role);
-	}
-
-	public void enterUsername(String usernamenew)
-	{
-		PageUtilities.enterText(usernametextbox, usernamenew);
-	}
-
-	public void enterPassword(String passwordnew)
-	{
-		PageUtilities.enterText(passwordtextbox, passwordnew);
-	}
-
-	public void enterConfirmPassword(String confirmpassword)
-	{
-		PageUtilities.enterText(confirmpasswordtextbox, confirmpassword);
-	}
-
-	public void enterSalesCommissionPercentage(String percentage)
-	{
-		PageUtilities.enterText(salescommissionpercentagetextbox, percentage);
-	} */
 
 	public void clicksaveButton()
 	{

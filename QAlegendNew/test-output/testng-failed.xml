@@ -10,7 +10,7 @@
       <class name="TestCases.QAlegentNewTestCases">
         <methods>
           <include name="initilization"/>
-          <include name="editBrands"/>
+          <include name="verifyIfUserCanDeleteBrands"/>
         </methods>
       </class> <!-- TestCases.QAlegentNewTestCases -->
     </classes>

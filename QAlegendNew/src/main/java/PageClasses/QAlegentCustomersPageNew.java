@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QAlegentCustomersPageNew {
 	
@@ -42,6 +43,7 @@ public class QAlegentCustomersPageNew {
 
 	public void clickOnActions()
 	{
+		WaitUtility.waitforElementToBeVisible(actiondropdown, 5);
 		PageUtilities.clickOnElement(actiondropdown);
 	}
 	public void clickOnViewOption()

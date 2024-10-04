@@ -10,15 +10,21 @@
     <classes>    
       <class name="TestCases.QAlegentNewTestCases">
       <methods>
-     <include name="deleteUser"> </include>
-       <include name="addRole"> </include>
-    <!--     <include name="editRole"> </include>
-         <include name="deleteRole"> </include>
-          <include name="viewCustomers"> </include>
-           <include name="addVariations"> </include>
-            <include name="addBrands"> </include> 
-           <include name="addBrands"></include>      
-           <include name="editBrands"></include>  -->
+   <!--  <include name="verifyIfUserCanDeleteUser"> </include>
+       <include name="verifyIfUserCanAddRole"> </include>
+       <include name="verifyIfUserCanEditRole"> </include>
+         <include name="verifyIfUserCanDeleteRole"> </include>
+         <include name="verifyIfUserCanViewTheCutomerDetails"> </include>          
+           <include name="verifyIfUserCanAddTheVariations"> </include>
+            <include name="verifyIfUserCanAddSellingPrice"> </include> 
+           <include name="verifyIfUserCanaddBrands"></include>        
+           <include name="verifyIfUserCanDeleteBrands"></include>  --> 
+           
+           <include name="verifyIfUserCanDeleteUser"></include>
+           <include name="verifyIfUserCanAddRole"> </include>
+            <include name="verifyIfUserCanViewTheCutomerDetails">
+            <include name="verifyIfUserCanDeleteBrands">
+          
       
       </methods>
       </class>
