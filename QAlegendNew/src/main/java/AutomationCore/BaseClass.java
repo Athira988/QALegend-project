@@ -2,6 +2,7 @@ package AutomationCore;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.OutputType;
@@ -39,8 +40,8 @@ public class BaseClass {
 		{
 			System.out.println("invalid browser");
 		}
-		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
-
+		//driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		return   driver;
 	}
 

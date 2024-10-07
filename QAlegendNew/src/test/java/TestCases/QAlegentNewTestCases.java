@@ -75,7 +75,7 @@ public class QAlegentNewTestCases extends BaseClass {
 		brandpage=new QAlegentBrandsPageNew(driver);			
 	}
 		
-	    @Test
+	    @Test (retryAnalyzer = RetryAnalyzer.class,groups= {"smoketest"})
 		public void verifyIfUserCanDeleteUser() throws IOException
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -101,7 +101,7 @@ public class QAlegentNewTestCases extends BaseClass {
 		userspage.okButton();		
 		Assert.assertEquals(userspage.noMatchingRecordsFound(), "No matching records found");
 }
-	    @Test
+	    @Test (retryAnalyzer = RetryAnalyzer.class,groups= {"smoketest"})
 		public void verifyIfUserCanAddRole()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -116,7 +116,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			Assert.assertEquals(rolepage.getaddedRole(),rolename);
 		}
 			
-	    @Test
+	    @Test //(retryAnalyzer = RetryAnalyzer.class,groups= {"regression"})
 		public void verifyIfUserCanEditRole() throws Exception {
 			
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -136,7 +136,7 @@ public class QAlegentNewTestCases extends BaseClass {
 		    Assert.assertTrue(rolepage.checkEditedRole()); 
 			
 		}
-		 @Test
+		 @Test (retryAnalyzer = RetryAnalyzer.class,groups= {"regression"})
 		public void verifyIfUserCanDeleteRole() throws InterruptedException
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -156,7 +156,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			
 		}
 		
-	    @Test
+	    @Test (retryAnalyzer = RetryAnalyzer.class)
 		public void verifyIfUserCanViewTheCutomerDetails()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -169,7 +169,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			
 		}
 		
-	    @Test
+	    @Test //(retryAnalyzer = RetryAnalyzer.class)
 		public void verifyIfUserCanAddTheVariations() throws InterruptedException
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -177,17 +177,17 @@ public class QAlegentNewTestCases extends BaseClass {
 			homepage.clickOnProductsAction();
 			varitationspage.clickOnVariationsOption();
 			varitationspage.clickOnAddVariationButton();			
-			String variationname=props.getProperty("variationname")+fakerUtility.randomNumberGenerator();
-			varitationspage.enterVariationName(variationname);
+			String variationname1=props.getProperty("variationname")+fakerUtility.randomNumberGenerator();
+			varitationspage.enterVariationName(variationname1);
 			String variationvalue=props.getProperty("addvariationvalues")+fakerUtility.randomNumberGenerator();
 			varitationspage.enterVariationvalue(variationvalue);
 			varitationspage.enterSaveButton();			
-		    varitationspage.enterSearchvalue(variationname);
-			Assert.assertEquals(varitationspage.checkaddedVariations(), variationname);
+		    varitationspage.enterSearchvalue(variationname1);
+			Assert.assertEquals(varitationspage.checkaddedVariations(), variationvalue);
 		}
 		
 	  
-	 @Test 
+	 @Test  //(retryAnalyzer = RetryAnalyzer.class)
 		public void verifyIfUserCanAddSellingPrice()
 		{
 			loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -204,7 +204,7 @@ public class QAlegentNewTestCases extends BaseClass {
 			Assert.assertEquals(sellingpricegroup.elementtoVerify(), sellingpricename); 
 		}
 	 
-	 @Test
+	 @Test //(retryAnalyzer = RetryAnalyzer.class)
 	 public void verifyIfUserCanaddBrands() throws Exception
 	 {
 		 loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));
@@ -217,10 +217,10 @@ public class QAlegentNewTestCases extends BaseClass {
 			brandpage.enterNameTextBox(addnametextbox);
 			brandpage.enterDescriptionTextBox(adddescriptiontextbox);
 			brandpage.clickOnSaveButton();			
-			brandpage.enterTextToSearch(adddescriptiontextbox);		
+			brandpage.enterTextToSearch(addnametextbox);		
 			Assert.assertEquals(brandpage.brandToBeVerified(), addnametextbox); 
 			 }
-	 @Test
+	 @Test (retryAnalyzer = RetryAnalyzer.class)
 	 public void verifyIfUserCanDeleteBrands() throws Exception
 	 {
 		 loginpage.loginToQAlengend(props.getProperty("username"), props.getProperty("password"));

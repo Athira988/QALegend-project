@@ -32,9 +32,10 @@ public class QAlegendLoginPageNew {
 	
 	public void loginToQAlengend(String username,String password)
 	{
-		PageUtilities.enterText(usernametextbox, username);
-		PageUtilities.enterText(passwordtextbox, password);
-		PageUtilities.clickOnElement(loginbutton);
+
+		usernametextbox.sendKeys(username);
+		passwordtextbox.sendKeys(password);
+		loginbutton.click();
 	}
 	
 	}

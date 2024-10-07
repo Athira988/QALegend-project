@@ -36,11 +36,6 @@ public class QAlegentCustomersPageNew {
 	}
 
 
-
-
-
-
-
 	public void clickOnActions()
 	{
 		WaitUtility.waitforElementToBeVisible(actiondropdown, 5);

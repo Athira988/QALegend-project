@@ -51,7 +51,7 @@ public class QAlegendRolePageNew {
 	@FindBy(xpath="//td[@class='sorting_1']")
 	WebElement addedrolename;
 	
-	@FindBy(xpath="(//div[@class='icheckbox_square-blue checked'])[1]")
+	@FindBy(xpath="(//div[contains(@class,'blue checked')])[1]")
 	WebElement checkeditrole;
 	
 	@FindBy(xpath="//td[@class='dataTables_empty']")
@@ -70,13 +70,13 @@ public class QAlegendRolePageNew {
 
 	public void clickOnAddButton()
 	{
-		PageUtilities.clickOnElement(addButton);
+		addButton.click();
 	}
 	
 	
 	public void clickOnUserCheckBox()
 	{
-		PageUtilities.clickOnElement(selectallusercheckbox);
+		selectallusercheckbox.click();
 	}
 	
 	public void enterTexttoSearch()
@@ -85,13 +85,14 @@ public class QAlegendRolePageNew {
 	}
 
 	public void enterTextToadd(String property) {
-		// TODO Auto-generated method stub
+		
 		PageUtilities.enterText(rolenametextbox, property);
 	}
 	
 	public void clickOnSaveButton()
 	{
-		PageUtilities.clickOnElement(saveButton);
+		
+		saveButton.click();
 	}
 	
 	public void enterroleTextToSearch(String role)
@@ -122,12 +123,14 @@ public class QAlegendRolePageNew {
 	
 	public void clickOnroleEditCheckBox()
 	{
-		PageUtilities.clickOnElement(roleeditcheckbox);
+		
+		roleeditcheckbox.click();
 	}
 	
 	public void clickOnUpdateButton()
 	{
-		PageUtilities.clickOnElement(updateButton);
+		
+		updateButton.click();
 	}
 	
 	public String getaddedRole()
@@ -138,7 +141,7 @@ public class QAlegendRolePageNew {
 	
 	public boolean checkEditedRole()
 	{
-		return (PageUtilities.isElementSelected(checkeditrole));
+		return (PageUtilities.isElementDisplayed(checkeditrole));
 	}
 	
 	public String checktheValidationDelete()

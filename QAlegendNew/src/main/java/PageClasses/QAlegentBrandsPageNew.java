@@ -25,25 +25,22 @@ public class QAlegentBrandsPageNew {
 	@FindBy(xpath="//button[text()='Save']")
 	WebElement saveButton;
 	
-	@FindBy(xpath="//input[@class='form-control input-sm']")
-	public
+	@FindBy(xpath="//input[@class='form-control input-sm']")	
 	WebElement searchtextbox;
 	
 	@FindBy(xpath="(//tr[@class='odd']//child::td)[2]")
 	WebElement addedbrandname;
 	
-	@FindBy(xpath="(//td[@class='sorting_1']")
+	@FindBy(xpath="(//tr[@class='odd']//child::td)[1]")
 	WebElement brandtobeverfied;
 	
 	@FindBy(xpath="//div[@id='brands_table_info']")
 	WebElement valdatationmessage;
 	
-	@FindBy(xpath="//button[@class='btn btn-xs btn-danger delete_brand_button']")
-	public
+	@FindBy(xpath="//button[@class='btn btn-xs btn-danger delete_brand_button']")	
 	WebElement deletbutton;
 	
-	@FindBy(xpath="//button[text()='OK']")
-	public
+	@FindBy(xpath="//button[text()='OK']")	
 	WebElement okButton;
 	
 	@FindBy(xpath="//tr[@class='odd']//child::td")
@@ -58,32 +55,33 @@ public class QAlegentBrandsPageNew {
 
 	public void clickOnAddButton()
 	{
-		PageUtilities.clickOnElement(addbutton);;
+		
+		addbutton.clear();
 	}
    
 	 public void enterNameTextBox(String name)
 	 {
-		 PageUtilities.enterText(addnametextbox, name);
+		
+		 addnametextbox.sendKeys(name);
 	 }
 	
 	 public void enterDescriptionTextBox(String desc)
 	 {
-		 PageUtilities.enterText(adddescriptiontextbox,desc);
+		 
+		 adddescriptiontextbox.sendKeys(desc);
 	 }
 	 
 	 public void clickOnSaveButton()
 	 {
-		 PageUtilities.clickOnElement(saveButton);
+		 saveButton.click();
 	 }
 	 
 	 
 	 
 	 public void enterTextToSearch(String text)
 	 {
-		 JavascriptExecutor executer= (JavascriptExecutor)driver;
-			executer.executeScript("arguments[0]", searchtextbox);
-			WaitUtility.waitforElementToBeVisible(searchtextbox, 15);
-			PageUtilities.enterText(searchtextbox, text);
+		 searchtextbox.sendKeys(text);
+			
 	 }
 	 
 	 public String verifyTheAddedBrandName()
@@ -93,7 +91,7 @@ public class QAlegentBrandsPageNew {
 	 
 	 public String brandToBeVerified()
 	 {
-		 WaitUtility.waitforElementToBeVisible(brandtobeverfied, 10);
+		 
 		 return(PageUtilities.getElementText(brandtobeverfied));
 	 }
 	 
@@ -104,8 +102,7 @@ public class QAlegentBrandsPageNew {
 	 
 	 public void clickOnDeleteButton()
 	 {
-		 //JavascriptExecutor executer= (JavascriptExecutor)driver;
-		//	executer.executeScript("arguments[0]", deletbutton);
+		 
 		 WaitUtility.waitforElementToBeVisible(deletbutton, 10);
 			PageUtilities.clickOnElement(deletbutton);
 		 

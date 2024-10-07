@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.QAlegentNewTestCases" class="method navigator-link" hash-for-method="verifyIfUserCanDeleteUser">verifyIfUserCanDeleteUser</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="TestCases.QAlegentNewTestCases" class="method navigator-link" hash-for-method="verifyIfUserCanaddBrands">verifyIfUserCanaddBrands</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,21 +118,46 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">TestCases.QAlegentNewTestCases</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyIfUserCanDeleteUser">
-                  </a> <!-- verifyIfUserCanDeleteUser -->
-                  <span class="method-name">verifyIfUserCanDeleteUser</span>
+                  <a name="verifyIfUserCanaddBrands">
+                  </a> <!-- verifyIfUserCanaddBrands -->
+                  <span class="method-name">verifyIfUserCanaddBrands</span>
+                  <div class="stack-trace">org.openqa.selenium.InvalidElementStateException: invalid element state
+  (Session info: chrome=129.0.6668.90)
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c6d73305f898ce8aa3a93046519c95b1, clearElement {id=f.52F70458CBEBFD38180D23F06ACE24F4.d.C323A5FB7156E9BAE36302235F6254E2.e.92}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63003}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63003/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c6d73305f898ce8aa3a93046519c95b1)] -&gt; xpath: //button[@class=&apos;btn btn-block btn-primary btn-modal&apos;]]
+Session ID: c6d73305f898ce8aa3a93046519c95b1
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:129)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.clear(Unknown Source)
+	at PageClasses.QAlegentBrandsPageNew.clickOnAddButton(QAlegentBrandsPageNew.java:59)
+	at TestCases.QAlegentNewTestCases.verifyIfUserCanaddBrands(QAlegentNewTestCases.java:214)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -151,7 +176,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;TestCases.QAlegentNewTestCases&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyIfUserCanDeleteUser&quot;/&gt;
+          &lt;include name=&quot;verifyIfUserCanaddBrands&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- TestCases.QAlegentNewTestCases --&gt;
     &lt;/classes&gt;
@@ -195,14 +220,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyIfUserCanDeleteUser')
+data.setCell(0, 1, 'verifyIfUserCanaddBrands')
 data.setCell(0, 2, 'TestCases.QAlegentNewTestCases')
-data.setCell(0, 3, 14060);
+data.setCell(0, 3, 8555);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -231,11 +256,11 @@ return data;
                 <br/>
                 <span class="ignored-method-name">verifyIfUserCanViewTheCutomerDetails</span>
                 <br/>
+                <span class="ignored-method-name">verifyIfUserCanDeleteUser</span>
+                <br/>
                 <span class="ignored-method-name">verifyIfUserCanAddSellingPrice</span>
                 <br/>
                 <span class="ignored-method-name">verifyIfUserCanAddRole</span>
-                <br/>
-                <span class="ignored-method-name">verifyIfUserCanaddBrands</span>
                 <br/>
                 <span class="ignored-method-name">verifyIfUserCanEditRole</span>
                 <br/>
@@ -255,8 +280,10 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyIfUserCanDeleteUser</span>
-                <span class="method-start">11498 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyIfUserCanaddBrands</span>
+                <span class="method-start">12977 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

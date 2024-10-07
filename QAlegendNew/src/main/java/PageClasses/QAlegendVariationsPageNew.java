@@ -41,6 +41,8 @@ public
    @FindBy(xpath="//td[@class='sorting_1']")
 	WebElement addedvariationname;
 	
+   @FindBy(xpath="(//td[@class='sorting_1']//following-sibling::td)[1]")
+   WebElement addedvariationdesc;
 	
 	
 	 public QAlegendVariationsPageNew(WebDriver driver) {
@@ -53,27 +55,32 @@ public
 
 	public void clickOnVariationsOption()
 	{
-		PageUtilities.clickOnElement(variationsoption);
+		
+		variationsoption.click();
 	}
 	
 	public void clickOnAddVariationButton()
 	{
-		PageUtilities.clickOnElement(addbutton);
+		
+		addbutton.click();
 	}
 	
 	public void enterVariationName(String name)
 	{
-		PageUtilities.enterText(variationname, name);
+		
+		variationname.sendKeys(name);
 	}
 	
 	public void enterVariationvalue(String name)
 	{
-		PageUtilities.enterText(addvariationvalues, name);
+		
+		addvariationvalues.sendKeys(name);
 	}
 	
 	public void enterSaveButton()
 	{
-		PageUtilities.clickOnElement(savebutton);
+		
+		savebutton.click();
 	}
 	
 	public void enterSearchvalue(String searchtext)
@@ -86,15 +93,17 @@ public
 	
 	public void clickActionButton()
 	{
-		PageUtilities.clickOnElement(actionbutton);
+		
+		actionbutton.click();
 	}
 	public void clickOnExporttoExcel()
 	{
-		PageUtilities.clickOnElement(excelexport);
+		
+		excelexport.click();
 	}
 	public String checkaddedVariations()
 	{
-		WaitUtility.waitforElementToBeVisible(addedvariationname, 10);
-		return(PageUtilities.getElementText(addedvariationname));
+		
+		return(PageUtilities.getElementText(addedvariationdesc));
 	}
 }

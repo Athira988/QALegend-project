@@ -46,21 +46,26 @@ public class QAlegentHomePageNew {
 
 	public void clickOnEndTourButton()
 	{
-		PageUtilities.clickOnElement(endtourbutton);
+		
+		endtourbutton.click();
+		
 	}
 	public void clickOnUserMangementOption()
 	{
-		PageUtilities.clickOnElement(UserManagementoption);
+		
+		UserManagementoption.click();
 	}
 
 	public void clickOnUserAction()
 	{
-		PageUtilities.clickOnElement(usersoption);
+		
+		usersoption.click();
 	}
 	
 	public void clickOnRoleAction()
 	{
-		PageUtilities.clickOnElement(roleoption);
+		
+		roleoption.click();
 	}
 	
 	public void clickOnContactsAction()

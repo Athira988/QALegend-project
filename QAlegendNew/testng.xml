@@ -6,7 +6,13 @@
 </listener>
 </listeners>
 <parameter name="Browser" value="Chrome"/>
-  <test thread-count="5" name="Test">
+
+  <test thread-count="5" name="Test" >
+  <!--<groups>
+<run> 
+<include name="smoketest"></include>
+</run>
+</groups> -->
     <classes>    
       <class name="TestCases.QAlegentNewTestCases">
       <methods>
@@ -20,7 +26,7 @@
            <include name="verifyIfUserCanaddBrands"></include>        
            <include name="verifyIfUserCanDeleteBrands"></include>  --> 
            
-           <include name="verifyIfUserCanDeleteUser"></include>
+           <include name="verifyIfUserCanEditRole"></include>
         <!--   <include name="verifyIfUserCanAddRole"> </include>
             <include name="verifyIfUserCanViewTheCutomerDetails"> </include>
             <include name="verifyIfUserCanDeleteBrands"> </include> --> 

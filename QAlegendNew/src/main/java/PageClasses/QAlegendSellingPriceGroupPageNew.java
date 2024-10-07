@@ -40,20 +40,24 @@ public class QAlegendSellingPriceGroupPageNew {
 
 	public void clickOnAddButton()
 	{
-		PageUtilities.clickOnElement(sellingpriceaddbutton);		
+		
+		sellingpriceaddbutton.click();
 	}
 	public void enterOnSellingPriceName(String name)
 	{
-		PageUtilities.enterText(sellingpricename, name);
+		
+		sellingpricename.sendKeys(name);
 	}
 	
 	public void enterOnSellingPriceDesc(String desc)
 	{
-		PageUtilities.enterText(sellingpricedesc, desc);
+		
+		sellingpricedesc.sendKeys(desc);
 	}
 	public void clickOnSaveButton()
 	{
-		PageUtilities.clickOnElement(saveButton);		
+		
+		saveButton.click();
 	}
 	public void enterSearchText(String searchtext)
 	{
